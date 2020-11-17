@@ -10,5 +10,25 @@
 <body>
     <h1>Files</h1>
     <a class="btn btn-primary" href="{{ route('files.create') }}">Create New File</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>File Name</th>
+                <th>Student Name</th>
+                <th>Teacher</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($files as $file)
+                <tr>
+                    <td>{{ $file->id }}</td>
+                    <td>{{ $file->file_name }}</td>
+                    <td>{{ $file->student->full_name }}</td>
+                    <td>{{ $file->teacher->full_name }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 </body>
 </html>
