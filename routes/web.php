@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FileController@index')->name('files.index');
+Route::get('/files/create', 'FileController@create')->name('files.create');
